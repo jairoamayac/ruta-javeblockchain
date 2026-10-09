@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Evaluación · Ruta JaveBlockchain</title>
+<meta name="description" content="Cómo se evalúa la Ruta JaveBlockchain 2026-II: semáforo semanal, insignias de nivel, rúbricas y rúbrica del Demo Day.">
+<link rel="icon" href="/assets/logo-jb.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/"><img src="/assets/logo-jb.svg" alt="JaveBlockchain" width="40" height="26"><span>Ruta JaveBlockchain</span></a>
+  <nav aria-label="Secciones"><a href="/">Inicio</a><a href="/tecnica">Ruta técnica</a><a href="/emprendimiento">Emprendimiento</a><a href="/entregables">Entregables</a><a href="/evaluacion">Evaluación</a><a href="/recursos">Recursos</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Calificación</div>
+    <h1>Evaluación</h1>
+    <p class="lead">Se evalúan tres cosas: que el equipo avance cada semana, que cada persona aprenda (y pueda explicar lo que construyó) y lo que presenta el equipo en el Demo Day. Las rúbricas se publican antes de calificar para que dos mentores califiquen igual.</p>
+    <div class="subnav"><a href="#semaforo">Semáforo semanal</a><a href="#insignias">Insignias</a><a href="#rubricas">Rúbricas técnicas</a><a href="#demo-day">Demo Day</a><a href="#premios">Premios</a></div>
+  </div>
+
+  <section id="semaforo">
+    <div class="eyebrow">Cada martes</div>
+    <h2>Semáforo del PR semanal</h2>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td><span class="pill ok">Verde</span></td><td>Entregado a tiempo, completo y con enlace verificable en las dos rutas.</td></tr>
+        <tr><td><span class="pill warn">Amarillo</span></td><td>Parcial, tarde o sin evidencia. Se completa antes del viernes.</td></tr>
+        <tr><td><span class="pill bad">Rojo</span></td><td>No entregó. El equipo va obligatoriamente a office hours esa semana.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">La parte técnica la revisan Juan Pablo y Emanuel; la de emprendimiento, Jairo.</p>
+  </section>
+
+  <section id="insignias">
+    <div class="eyebrow">Por persona</div>
+    <h2>Insignias de nivel</h2>
+    <div class="grid2">
+      <div class="box"><h3><span class="chip fun">Fundamentos</span></h3><p>6 de las 7 habilidades del checklist, marcadas por un mentor cuando la ve ejecutada sin ayuda.</p></div>
+      <div class="box"><h3><span class="chip tec">Builders</span></h3><p>7 de las 9 habilidades del checklist. Además, nadie recibe la insignia sin pasar la <b>prueba oral</b> (nivel 2 o más) y sin un contrato con <b>rúbrica de 2,0 o más</b>.</p></div>
+    </div>
+    <p class="muted">El checklist completo está en la <a href="/tecnica#niveles">ruta técnica</a>. Las insignias se publican en el repositorio del semillero y el panel del Demo Day las ve como contexto, no como puntaje.</p>
+  </section>
+
+  <section id="rubricas">
+    <div class="eyebrow">De 0 a 3 por criterio</div>
+    <h2>Rúbricas técnicas</h2>
+
+    <h3>Calidad de contratos Soroban</h3>
+    <div class="tw wide"><table>
+      <thead><tr><th>Criterio</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead>
+      <tbody>
+        <tr><td><b>Autorización</b></td><td>Funciones que cambian estado sin <code>require_auth</code></td><td><code>require_auth</code> en algunas, inconsistente</td><td>En todas las funciones que cambian estado</td><td>Además, roles o admin guardados en storage y verificados</td></tr>
+        <tr><td><b>Manejo de errores</b></td><td>Panics genéricos o sin validar entradas</td><td>Valida entradas pero con <code>panic!</code></td><td>Errores tipados con <code>contracterror</code> y <code>Result</code></td><td>Errores documentados y probados</td></tr>
+        <tr><td><b>Storage</b></td><td>Todo en un solo tipo sin criterio</td><td>Tipos elegidos sin justificar ni TTL</td><td>Tipo correcto por dato</td><td>Además, extiende TTL donde corresponde y lo explica</td></tr>
+        <tr><td><b>Pruebas</b></td><td>Sin pruebas</td><td>Una prueba del camino feliz</td><td>Tres o más, incluido un caso de fallo</td><td>Pruebas de autorización con <code>mock_auths</code> y de límites</td></tr>
+        <tr><td><b>Secretos y configuración</b></td><td>Llaves o seeds en el repositorio (crítico)</td><td>Configuración mezclada en el código</td><td>Variables de entorno y <code>.gitignore</code> correctos</td><td>Además, README con red, Contract ID y cómo reproducir el despliegue</td></tr>
+        <tr><td><b>Documentación</b></td><td>No se puede invocar sin preguntar</td><td>README incompleto</td><td>README con build, deploy e invoke de ejemplo</td><td>Además, diagrama del flujo y decisiones de diseño</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note"><b>Hallazgo crítico:</b> una llave privada o seed en el repositorio, o una función que mueve fondos o cambia el admin sin autorización. Anula el puntaje de la revisión hasta corregirlo.</p>
+
+    <h3>Commits y pull requests</h3>
+    <div class="tw wide"><table>
+      <thead><tr><th>Criterio</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mensajes</b></td><td>«update», «fix», «final»</td><td>Describen el qué</td><td>Describen qué y por qué</td><td>Siguen la convención tipo: descripción</td></tr>
+        <tr><td><b>Atomicidad</b></td><td>Un commit con todo el trabajo de la semana</td><td>Commits grandes mezclando temas</td><td>Un cambio por commit</td><td>Historial que cuenta la historia del trabajo</td></tr>
+        <tr><td><b>Descripción del PR</b></td><td>Vacía</td><td>Una línea</td><td>Qué cambia, cómo probarlo y declaración de IA</td><td>Además, capturas o hashes de la prueba en testnet</td></tr>
+        <tr><td><b>Revisión por par</b></td><td>Sin revisión</td><td>Aprobado sin comentarios</td><td>Al menos un comentario sustantivo</td><td>Cambios solicitados y atendidos antes de fusionar</td></tr>
+        <tr><td><b>Pruebas</b></td><td>No corren o fallan</td><td>Corren localmente según el autor</td><td>Pasan en el repositorio</td><td>CI configurada y en verde</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Comprensión del código</h3>
+    <p class="muted">Prueba oral de cinco minutos en la sesión 4: el mentor elige dos funciones del código entregado y cualquier integrante las explica, sin pantalla ni asistentes.</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td class="num">0</td><td>No reconoce el código o no sabe qué hace.</td></tr>
+        <tr><td class="num">1</td><td>Describe qué hace, pero no por qué está así ni qué pasa si falla.</td></tr>
+        <tr><td class="num">2</td><td>Explica qué hace, por qué se tomó esa decisión y qué pasa con una entrada inválida.</td></tr>
+        <tr><td class="num">3</td><td>Además, propone una mejora o identifica un riesgo sin que se le pregunte.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="demo-day">
+    <div class="eyebrow">Viernes 13 de noviembre</div>
+    <h2>Rúbrica del Demo Day (100 puntos)</h2>
+    <div class="tw wide"><table>
+      <thead><tr><th>Criterio</th><th class="num">Puntos</th><th>Qué se evalúa</th></tr></thead>
+      <tbody>
+        <tr><td><b>Problema y usuario</b></td><td class="num">20</td><td>Dolor real validado con entrevistas; por qué blockchain y por qué Stellar.</td></tr>
+        <tr><td><b>Funcionamiento técnico</b></td><td class="num">30</td><td>Corre en testnet de punta a punta durante la demo; uso correcto de cuentas, activos o contratos; código legible. Se apoya en la rúbrica de contratos.</td></tr>
+        <tr><td><b>Propuesta de valor y producto</b></td><td class="num">20</td><td>Flujo claro, onboarding y decisiones justificadas con usuarios.</td></tr>
+        <tr><td><b>Informe técnico</b></td><td class="num">20</td><td>Estructura completa, metodología clara y resultados verificables.</td></tr>
+        <tr><td><b>Pitch</b></td><td class="num">10</td><td>Tres minutos, demo sin improvisar y respuestas al panel. Cualquier integrante debe poder explicar cualquier parte.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Un hallazgo crítico de seguridad resta 10 puntos. El puntaje final es el promedio del panel.</p>
+  </section>
+
+  <section id="premios">
+    <div class="eyebrow">Premios</div>
+    <h2>Quién compite y cómo se gana</h2>
+    <div class="grid2">
+      <div class="box"><h3>Para competir por premios</h3><ul class="clean"><li>Al menos 3 de los 4 PR en verde o amarillo.</li><li>Commits en 4 de las 5 semanas.</li><li>Demo en vivo en testnet: no se aceptan videos.</li></ul></div>
+      <div class="box"><h3>Premios</h3><ul class="clean"><li><b>Primer lugar:</b> USDC 120.</li><li><b>Segundo lugar:</b> USDC 80.</li><li>Los mejores proyectos quedan como candidatos a Instawards y al Stellar Community Fund.</li><li>En caso de empate gana el equipo con más PR en verde.</li></ul></div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie"><div class="wrap"><span>JaveBlockchain · Semillero de Blockchain, Facultad de Ingeniería, Pontificia Universidad Javeriana</span><span>Instagram @javeblockchain</span></div></footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entregables · Ruta JaveBlockchain</title>
+<meta name="description" content="Qué entrega cada equipo de la Ruta JaveBlockchain 2026-II en cada pull request, por ruta y por nivel.">
+<link rel="icon" href="/assets/logo-jb.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/"><img src="/assets/logo-jb.svg" alt="JaveBlockchain" width="40" height="26"><span>Ruta JaveBlockchain</span></a>
+  <nav aria-label="Secciones"><a href="/">Inicio</a><a href="/tecnica">Ruta técnica</a><a href="/emprendimiento">Emprendimiento</a><a href="/entregables">Entregables</a><a href="/evaluacion">Evaluación</a><a href="/recursos">Recursos</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Semana a semana</div>
+    <h1>Entregables</h1>
+    <p class="lead">Cada semana el equipo abre un pull request en su repositorio con lo de las dos rutas. Vence el <b>lunes a las 11:59 p. m.</b> y se revisa en las office hours del martes. Todo lo técnico se verifica con un enlace público: un hash o un Contract ID en stellar.expert, o un PR en GitHub.</p>
+  </div>
+
+  <section>
+    <h2>Pull requests de la Ruta</h2>
+    <div class="tw wide"><table>
+      <thead><tr><th>PR</th><th><span class="chip fun">Fundamentos</span></th><th><span class="chip tec">Builders</span></th><th><span class="chip emp">Emprendimiento</span></th></tr></thead>
+      <tbody>
+        <tr><td class="num">#1<br><span class="muted">Lun 19 oct</span></td>
+          <td>Repositorio desde la plantilla. README con nombres, nivel, direcciones <code>G…</code> y explicación propia de la primera transacción.</td>
+          <td>Lo de Fundamentos más el entorno: Rust, <code>wasm32v1-none</code>, <code>stellar-cli</code> y cuenta <code>alice</code> fondeada, con evidencia en el README.</td>
+          <td>Issue «Hipótesis de problema» y lista de 5 personas a entrevistar.</td></tr>
+        <tr><td class="num">#2<br><span class="muted">Lun 26 oct</span></td>
+          <td>Emisión del activo documentada, diagrama de cuentas, trustlines y pagos, y explicación de qué es un activo.</td>
+          <td><code>hello_world</code> con <code>count</code> en testnet, Contract ID en el README, pruebas en CI y declaración de IA.</td>
+          <td>5 entrevistas en <code>docs/entrevistas.md</code> y lienzo del problema en <code>docs/problema.md</code>.</td></tr>
+        <tr><td class="num">#3<br><span class="muted">Lun 2 nov</span></td>
+          <td>App con wallet y pago en testnet, bocetos de las tres pantallas y README con el problema y las operaciones.</td>
+          <td>Diseño del contrato aprobado, <code>lib.rs</code> con las funciones firmadas y pruebas del comportamiento esperado.</td>
+          <td>Propuesta de valor en <code>docs/propuesta-de-valor.md</code>, probada con 3 usuarios, y mapa de las tres pantallas.</td></tr>
+        <tr><td class="num">#4<br><span class="muted">Lun 9 nov</span></td>
+          <td colspan="2">Proyecto desplegado en testnet de punta a punta. README final con problema, operaciones o contratos, Contract ID o cuentas, cómo correrlo y declaración de IA. Informe técnico en <code>docs/informe.md</code>.</td>
+          <td>Modelo en <code>docs/modelo.md</code>, guion en <code>docs/pitch.md</code> y diapositivas en <code>docs/pitch.pdf</code>.</td></tr>
+        <tr><td class="num">Demo Day<br><span class="muted">Vie 13 nov</span></td>
+          <td colspan="3">Pitch de 3 minutos, demo en vivo de 3 minutos en testnet y 2 minutos de preguntas del panel.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Además, cada semana debe haber commits en el repositorio: la meta es que el 80 % de los equipos tenga commits en 4 de las 5 semanas.</p>
+  </section>
+
+  <section id="repo">
+    <div class="eyebrow">Estructura</div>
+    <h2>Cómo queda el repositorio del equipo</h2>
+    <pre>2026-II-&lt;equipo&gt;/
+├── README.md              equipo, roles, nivel, direcciones, Contract ID, cómo correrlo
+├── DEBUG_LOG.md           errores de la sesión 4 y cómo se resolvieron
+├── docs/
+│   ├── problema.md        lienzo del problema (PR #2)
+│   ├── entrevistas.md     5 entrevistas (PR #2)
+│   ├── propuesta-de-valor.md   (PR #3)
+│   ├── modelo.md          modelo en una página (PR #4)
+│   ├── pitch.md y pitch.pdf    (PR #4)
+│   └── informe.md         informe técnico (PR #4)
+├── contracts/             Builders: contrato Soroban y pruebas
+├── app/                   frontend o app con wallet
+└── .github/
+    ├── PULL_REQUEST_TEMPLATE.md
+    └── workflows/          CI</pre>
+    <p class="note">El informe técnico sigue esta estructura: antecedentes; planteamiento del problema (justificación, objetivos, viabilidad y deficiencias en el conocimiento del problema); hipótesis; marco teórico; metodología y resultados.</p>
+  </section>
+
+  <section id="plantilla-pr">
+    <div class="eyebrow">Va en .github/PULL_REQUEST_TEMPLATE.md</div>
+    <h2>Plantilla de pull request con declaración de IA</h2>
+    <details class="plantilla" open><summary>PULL_REQUEST_TEMPLATE.md</summary><div class="in"><button class="copy" type="button">Copiar</button><pre>## Qué hace este PR
+(2 a 4 líneas, en sus palabras)
+
+## Ruta de emprendimiento
+- [ ] Entregable de la semana en docs/ (enlace):
+
+## Cómo lo probamos
+- [ ] Pruebas automatizadas pasan (CI verde)
+- [ ] Probado en testnet: hash / Contract ID: ____
+
+## Declaración de uso de IA (obligatoria)
+- [ ] No usamos IA en este PR
+- [ ] Usamos IA para explicar conceptos o errores
+- [ ] Usamos IA para generar código. Archivos/funciones: ____
+      Qué cambiamos después de leerlo: ____
+      Qué parte no entendimos del todo (sé honesto, no resta puntos): ____
+- [ ] Usamos IA para generar pruebas. ¿Las leímos y entendimos qué verifican? Sí / No
+
+## Integrante que puede explicar cada parte
+| Archivo / función | Quién la explica |
+|---|---|
+|   |   |</pre></div></details>
+    <p class="note">Convención de commits: <code>feat:</code>, <code>fix:</code>, <code>docs:</code>, <code>test:</code> seguidos de una descripción corta. La rama <code>main</code> está protegida: todo entra por PR con al menos una revisión.</p>
+  </section>
+</main>
+
+<footer class="pie"><div class="wrap"><span>JaveBlockchain · Semillero de Blockchain, Facultad de Ingeniería, Pontificia Universidad Javeriana</span><span>Instagram @javeblockchain</span></div></footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>

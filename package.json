@@ -1,0 +1,12 @@
+{
+  "name": "ruta-javeblockchain",
+  "private": true,
+  "description": "Sitio de la Ruta JaveBlockchain 2026-II (Cloudflare Worker con assets estáticos)",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

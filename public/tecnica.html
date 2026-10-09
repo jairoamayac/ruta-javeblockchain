@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruta técnica · Ruta JaveBlockchain</title>
+<meta name="description" content="Bloques técnicos de la Ruta JaveBlockchain 2026-II: actividades minuto a minuto por nivel y tarea de cada semana.">
+<link rel="icon" href="/assets/logo-jb.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/"><img src="/assets/logo-jb.svg" alt="JaveBlockchain" width="40" height="26"><span>Ruta JaveBlockchain</span></a>
+  <nav aria-label="Secciones"><a href="/">Inicio</a><a href="/tecnica">Ruta técnica</a><a href="/emprendimiento">Emprendimiento</a><a href="/entregables">Entregables</a><a href="/evaluacion">Evaluación</a><a href="/recursos">Recursos</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow"><span class="chip tec">Ruta técnica</span> · Lidera Juan Pablo Conrado · Colidera Emanuel Benavides</div>
+    <h1>Ruta técnica</h1>
+    <p class="lead">Qué se hace en cada bloque técnico, minuto a minuto y por nivel, y qué entrega el equipo la semana siguiente. La meta no es la cantidad de commits: es que cada persona pueda explicar lo que construyó.</p>
+    <div class="facts">
+      <span><span class="chip fun">Fundamentos</span> navegador, Stellar Lab, wallet y app</span>
+      <span><span class="chip tec">Builders</span> Rust, Soroban, contrato y frontend</span>
+      <span>Tarea: PR los <b>lunes 11:59 p. m.</b> · Office hours los <b>martes</b>, virtual, 60 min</span>
+    </div>
+    <div class="subnav"><a href="#niveles">Niveles</a><a href="#s1">Sesión 1</a><a href="#s2">Sesión 2</a><a href="#s3">Sesión 3</a><a href="#s4">Sesión 4</a><a href="#s5">Demo Day</a><a href="#ia">Uso de IA</a></div>
+  </div>
+
+  <section id="niveles">
+    <div class="eyebrow">Dos niveles</div>
+    <h2>Fundamentos y Builders</h2>
+    <p class="muted">El quiz diagnóstico de la sesión 1 asigna el nivel. Se alcanza el nivel con el 80 % del checklist: 6 de 7 habilidades en Fundamentos y 7 de 9 en Builders. Quien completa Fundamentos puede pasar a Builders en cualquier sesión.</p>
+    <div class="grid2">
+      <div class="box">
+        <h3><span class="chip fun">Fundamentos</span></h3>
+        <div class="tw"><table>
+          <thead><tr><th>Habilidad observable</th><th class="num">Sesión</th></tr></thead>
+          <tbody>
+            <tr><td>Crear una cuenta en testnet y fondearla con Friendbot</td><td class="num">1</td></tr>
+            <tr><td>Enviar un pago y encontrarlo en el explorador</td><td class="num">1</td></tr>
+            <tr><td>Explicar qué son cuenta, secuencia, fee y reserva base</td><td class="num">2</td></tr>
+            <tr><td>Crear una trustline y emitir un activo propio en Stellar Lab</td><td class="num">2</td></tr>
+            <tr><td>Hacer un path payment o un pago en un activo distinto a XLM</td><td class="num">2</td></tr>
+            <tr><td>Conectar Freighter a una app plantilla y firmar desde ella</td><td class="num">3</td></tr>
+            <tr><td>Explicar por qué el problema del equipo necesita (o no) blockchain</td><td class="num">3</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="box">
+        <h3><span class="chip tec">Builders</span></h3>
+        <div class="tw"><table>
+          <thead><tr><th>Habilidad observable</th><th class="num">Sesión</th></tr></thead>
+          <tbody>
+            <tr><td>Compilar un contrato Soroban a WASM y correr sus pruebas</td><td class="num">2</td></tr>
+            <tr><td>Desplegar e invocar un contrato en testnet desde la CLI</td><td class="num">2</td></tr>
+            <tr><td>Usar <code>require_auth</code> correctamente en una función que cambia estado</td><td class="num">3</td></tr>
+            <tr><td>Elegir el tipo de storage (instance, persistent, temporary) y justificarlo</td><td class="num">3</td></tr>
+            <tr><td>Devolver errores tipados en lugar de panics genéricos</td><td class="num">3 y 4</td></tr>
+            <tr><td>Generar bindings TypeScript e invocar el contrato desde un frontend</td><td class="num">3 y 4</td></tr>
+            <tr><td>Escribir al menos tres pruebas, incluida una de fallo esperado</td><td class="num">4</td></tr>
+            <tr><td>Resolver un error de compilación o despliegue sin ayuda</td><td class="num">4</td></tr>
+            <tr><td>Explicar dos funciones de su contrato elegidas al azar, sin IA</td><td class="num">4</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESIÓN 1 -->
+  <section id="s1">
+    <div class="ses-head"><div><div class="eyebrow">Sesión 1 · Viernes 16 de octubre · 2:30 a 3:30 p. m.</div><h2>Arranque y primera transacción</h2></div><span class="when">Bloque técnico de 60 min, para todos</span></div>
+    <p class="objetivo"><b>Objetivo:</b> que todos salgan con una wallet creada, una cuenta fondeada en testnet y una transacción firmada por ellos mismos y verificada en el explorador.</p>
+    <div class="minutos">
+      <div><span class="m">Check-in</span><span class="a"><b>Quiz diagnóstico</b><small>10 preguntas en el celular, individual y sin IA, mientras llegan (1:45 a 2:00 p. m.). Define el nivel.</small></span></div>
+      <div><span class="m">0–15</span><span class="a"><b>¿Qué es Stellar y para qué sirve?</b><small>Cuentas, XLM, un ledger cada ~5 s, fees fijos, testnet frente a mainnet. Exposición con demo en vivo.</small></span></div>
+      <div><span class="m">15–35</span><span class="a"><b>Taller: Freighter y cuenta en testnet</b><small>Instalar Freighter, crear la cuenta, cambiar a Testnet y fondear con Friendbot. Guiado, cada uno en su equipo. Evidencia: captura de la cuenta fondeada.</small></span></div>
+      <div><span class="m">35–50</span><span class="a"><b>Primera transacción en parejas</b><small>Pago de 10 XLM a un compañero y búsqueda del hash en stellar.expert (testnet). Evidencia: hash en el formulario de wallets.</small></span></div>
+      <div><span class="m">50–60</span><span class="a"><b>Niveles, registro y tarea</b><small>Asignación Fundamentos o Builders, registro en el Stellar Ambassador Program, explicación de la tarea y de la declaración de uso de IA.</small></span></div>
+    </div>
+    <p class="note"><b>Conceptos que deben quedar claros</b> (se preguntan en el quiz de salida): llave pública frente a secreta, reserva base (por qué la cuenta no existe hasta recibir fondos), qué es un hash y cómo verificarlo, y por qué testnet no vale dinero.</p>
+    <div class="tarea">
+      <div class="eyebrow">Tarea · PR #1</div>
+      <div class="vence">Vence el lunes 19 de octubre, 11:59 p. m.</div>
+      <ul class="clean">
+        <li><span class="chip fun">Fundamentos</span> Repositorio del equipo creado desde la plantilla. README con nombres, nivel, direcciones <code>G…</code> de testnet de cada integrante y una explicación propia (máximo 150 palabras) de qué pasó en su primera transacción.</li>
+        <li><span class="chip tec">Builders</span> Lo anterior más el entorno listo: Rust ≥ 1.84, <code>rustup target add wasm32v1-none</code>, <code>stellar-cli</code> instalado y <code>stellar keys generate alice --network testnet --fund</code>. Evidencia en el README: salida de <code>stellar --version</code> y de <code>stellar keys address alice</code>.</li>
+        <li><b>Todos:</b> lectura de Stellar Docs → Learn → Fundamentals: Accounts, Assets, Operations y Transactions.</li>
+      </ul>
+    </div>
+    <p class="note"><b>Riesgos previstos:</b> computadores sin permisos para instalar (en la sesión 1 basta Freighter como extensión del navegador); Friendbot caído (hay dos cuentas prefondeadas para repartir XLM de testnet); personas sin computador (trabajan en pareja, pero cada una crea su wallet en su propio dispositivo).</p>
+  </section>
+
+  <!-- SESIÓN 2 -->
+  <section id="s2">
+    <div class="ses-head"><div><div class="eyebrow">Sesión 2 · Viernes 23 de octubre · 2:15 a 4:00 p. m.</div><h2>Activos, operaciones y primer contrato</h2></div><span class="when">Bloque técnico de 105 min: 30 comunes y 75 por nivel</span></div>
+    <p class="objetivo"><b>Objetivo:</b> entender el modelo de cuentas y activos de Stellar haciéndolo (emitir un activo propio) y, en Builders, desplegar e invocar el primer contrato Soroban en testnet.</p>
+    <div class="minutos">
+      <div><span class="m">0–30</span><span class="a"><b>Bloque común</b><small>Anatomía de una transacción (source, sequence, fee, operaciones, firmas). Operaciones clave: <code>createAccount</code>, <code>payment</code>, <code>changeTrust</code>, <code>manageSellOffer</code>, <code>setOptions</code>. Qué es un activo (código y emisor) y por qué existe la trustline. Demo en Stellar Lab: construir una transacción a mano y leerla en XDR.</small></span></div>
+      <div><span class="m">30–105</span><span class="a"><b>Cada nivel en su espacio</b><small>Ver los dos talleres a continuación.</small></span></div>
+    </div>
+    <div class="grid2">
+      <div class="box">
+        <h3><span class="chip fun">Fundamentos</span> Emite tu propio activo</h3>
+        <p class="muted">En lab.stellar.org, red Testnet.</p>
+        <ol class="steps">
+          <li><span>Crear dos cuentas, emisora y distribuidora, y fondearlas con Friendbot.</span></li>
+          <li><span>Desde la distribuidora, <code>changeTrust</code> al activo <code>JAVE</code> de la emisora.</span></li>
+          <li><span>Desde la emisora, <code>payment</code> de 1.000 JAVE a la distribuidora.</span></li>
+          <li><span>Enviar JAVE a la wallet Freighter de un compañero. Él tiene que agregar la trustline primero: ahí se entiende el concepto.</span></li>
+          <li><span>Verificar en stellar.expert balances, trustlines y operaciones.</span></li>
+          <li><span><b>Reto:</b> bloquear la emisión con <code>setOptions</code> (masterWeight 0) y explicar qué implica.</span></li>
+        </ol>
+      </div>
+      <div class="box">
+        <h3><span class="chip tec">Builders</span> Hello Soroban</h3>
+        <p class="muted">Siguiendo developers.stellar.org → Build → Smart Contracts → Getting Started.</p>
+        <ol class="steps">
+          <li><span><code>stellar contract init hello-jave</code> y recorrer la estructura: <code>Cargo.toml</code>, <code>contracts/hello_world/src/lib.rs</code>, <code>test.rs</code>.</span></li>
+          <li><span>Leer el contrato línea a línea: <code>#[contract]</code>, <code>#[contractimpl]</code>, <code>Env</code>, <code>Symbol</code>, <code>Vec</code> y por qué es <code>no_std</code>.</span></li>
+          <li><span><code>cargo test</code> y modificar la prueba para que falle a propósito: entender qué verifica.</span></li>
+          <li><span><code>stellar contract build</code> genera el Wasm en <code>target/wasm32v1-none/release/</code>.</span></li>
+          <li><span><code>stellar contract deploy --wasm … --source-account alice --network testnet --alias hello_world</code> y guardar el Contract ID.</span></li>
+          <li><span><code>stellar contract invoke --id hello_world --source-account alice --network testnet -- hello --to Javeriana</code>, y leer el resultado y el fee en el explorador.</span></li>
+          <li><span><b>Reto:</b> agregar una función <code>count</code> con un contador en instance storage, con su prueba.</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="tarea">
+      <div class="eyebrow">Tarea · PR #2</div>
+      <div class="vence">Vence el lunes 26 de octubre, 11:59 p. m.</div>
+      <ul class="clean">
+        <li><span class="chip fun">Fundamentos</span> Script o secuencia documentada (Lab o JS SDK) que reproduzca la emisión del activo; diagrama propio, a mano está bien, de las cuentas, trustlines y pagos; explicación de 150 palabras de qué es un activo en Stellar.</li>
+        <li><span class="chip tec">Builders</span> Contrato <code>hello_world</code> con <code>count</code> desplegado en testnet, Contract ID en el README, pruebas pasando en CI (la plantilla trae GitHub Actions) y declaración de IA en la plantilla de PR.</li>
+        <li><b>Lecturas:</b> Builders, Soroban → Learn → Storage y Authorization. Fundamentos, Stellar Docs → Learn → Anchors (prepara la sesión 3).</li>
+      </ul>
+    </div>
+    <p class="note"><b>Qué observan los mentores esta semana:</b> si los Builders entienden qué verifica una prueba antes de pedirle a la IA que la escriba, y si los Fundamentos pueden explicar la trustline sin leer.</p>
+  </section>
+
+  <!-- SESIÓN 3 -->
+  <section id="s3">
+    <div class="ses-head"><div><div class="eyebrow">Sesión 3 · Viernes 30 de octubre · 2:15 a 3:45 p. m.</div><h2>Wallets, anclas y la dApp</h2></div><span class="when">75 min de taller (25 comunes y 50 por nivel) y 15 de revisión</span></div>
+    <p class="objetivo"><b>Objetivo:</b> conectar lo que ya saben con un producto: una interfaz que firma con Freighter y habla con Stellar. Mientras tanto, la parte de negocio de cada equipo está en el taller del CJE.</p>
+    <div class="minutos">
+      <div><span class="m">0–25</span><span class="a"><b>Bloque común</b><small>Cómo una wallet firma sin exponer la llave (Freighter API, <code>signTransaction</code>). Qué es un ancla y SEP-24 / SEP-31 a nivel conceptual: cómo entra y sale dinero real. Cómo un contrato Soroban se vuelve usable desde el navegador (bindings TypeScript y RPC). Demo: Scaffold Stellar en vivo.</small></span></div>
+      <div><span class="m">25–75</span><span class="a"><b>Cada nivel en su espacio</b><small>Ver los dos talleres a continuación.</small></span></div>
+      <div><span class="m">75–90</span><span class="a"><b>Revisión por mesa</b><small>Los mentores revisan el diseño del contrato (Builders) y los bocetos de las tres pantallas (Fundamentos) antes de la integración con negocio.</small></span></div>
+    </div>
+    <div class="grid2">
+      <div class="box">
+        <h3><span class="chip fun">Fundamentos</span> Tu app con wallet</h3>
+        <ol class="steps">
+          <li><span>Clonar la plantilla <code>jave-wallet-starter</code> (React y Freighter API).</span></li>
+          <li><span>Botón «Conectar wallet»: mostrar la dirección y los balances (XLM y el activo JAVE de la sesión 2).</span></li>
+          <li><span>Formulario de pago: construir la transacción con el SDK, pedir la firma a Freighter, enviarla y mostrar el hash con enlace al explorador.</span></li>
+          <li><span>Bocetar en Figma o en papel las tres pantallas de la dApp del Demo Day y definir qué operación de Stellar usa cada una.</span></li>
+        </ol>
+      </div>
+      <div class="box">
+        <h3><span class="chip tec">Builders</span> Contrato más frontend</h3>
+        <ol class="steps">
+          <li><span>Crear el proyecto con Scaffold Stellar (o <code>stellar contract init</code> y Vite) y conectarlo al contrato de la sesión 2.</span></li>
+          <li><span>Generar bindings: <code>stellar contract bindings typescript --network testnet --contract-id &lt;ID&gt; --output-dir packages/hello_world</code>.</span></li>
+          <li><span>Invocar <code>hello</code> y <code>count</code> desde el frontend, con la cuenta de Freighter firmando.</span></li>
+          <li><span>Diseñar el contrato del Demo Day en una página: funciones, tipos, qué va en qué storage y quién debe autorizar qué (<code>require_auth</code>). Se revisa en office hours antes de escribir código.</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="tarea">
+      <div class="eyebrow">Tarea · PR #3</div>
+      <div class="vence">Vence el lunes 2 de noviembre, 11:59 p. m.</div>
+      <ul class="clean">
+        <li><span class="chip fun">Fundamentos</span> App con conexión de wallet y pago funcionando en testnet; Figma o bocetos de las tres pantallas; README con el problema que resuelven (una frase) y qué operaciones usan.</li>
+        <li><span class="chip tec">Builders</span> Diseño del contrato aprobado; primer <code>lib.rs</code> con las funciones firmadas, aunque estén vacías, y pruebas que describan el comportamiento esperado. Pueden fallar: eso es TDD.</li>
+        <li><b>Todos:</b> lectura de Stellar Docs → Learn → Encyclopedia → Security (claves, multisig, phishing). Se pregunta en la sesión 4.</li>
+      </ul>
+    </div>
+    <p class="note"><b>Qué observan los mentores:</b> si el diseño del contrato lo defiende el equipo o lo generó la IA sin entenderlo. Preguntas: ¿por qué ese storage?, ¿qué pasa si el TTL expira?, ¿quién puede llamar esta función?</p>
+  </section>
+
+  <!-- SESIÓN 4 -->
+  <section id="s4">
+    <div class="ses-head"><div><div class="eyebrow">Sesión 4 · Viernes 6 de noviembre · 2:10 a 4:25 p. m.</div><h2>Taller integrador y medición de comprensión</h2></div><span class="when">Bloque técnico de 135 min</span></div>
+    <p class="objetivo"><b>Objetivo:</b> cerrar el ciclo integrar, probar y desplegar del proyecto de cada equipo, y tomar las tres medidas de comprensión: reto sin IA, prueba oral y registro de depuración.</p>
+    <div class="minutos">
+      <div><span class="m">0–20</span><span class="a"><b>Reto sin IA (todo el equipo)</b><small>Cada equipo recibe un contrato o una transacción con un error plantado. Fundamentos: trustline faltante o sequence mal. Builders: <code>require_auth</code> ausente, storage mal elegido o un <code>panic</code> sin manejar. Deben encontrarlo y explicarlo por escrito, sin IA y sin internet salvo la documentación oficial.</small></span></div>
+      <div><span class="m">20–75</span><span class="a"><b>Integración del proyecto</b><small>Fundamentos conectan todas sus pantallas a operaciones reales en testnet; Builders implementan las funciones diseñadas en la sesión 3, pasan sus pruebas y despliegan. Los mentores rotan por mesa. En paralelo, negocio trabaja modelo y pitch con Jairo.</small></span></div>
+      <div><span class="m">75–90</span><span class="a"><b>Pausa y refrigerio</b></span></div>
+      <div><span class="m">90–120</span><span class="a"><b>Prueba oral de comprensión</b><small>El mentor visita cada equipo 5 a 6 minutos, elige un commit o una función al azar y hace tres preguntas. Responde cualquier integrante, lo elige el mentor. Los demás equipos siguen integrando.</small></span></div>
+      <div><span class="m">120–135</span><span class="a"><b>Puesta en común</b><small>Errores más frecuentes del reto, qué se espera en el Demo Day y orden de presentación.</small></span></div>
+    </div>
+    <p class="note"><b>Registro de depuración autónoma:</b> entre el minuto 20 y el 75 cada equipo anota en <code>DEBUG_LOG.md</code> cada error que encuentre, qué intentó primero y si lo resolvió solo, con la documentación, con un compañero o con IA.</p>
+    <div class="tarea">
+      <div class="eyebrow">Tarea · PR #4</div>
+      <div class="vence">Vence el lunes 9 de noviembre, 11:59 p. m. · Office hours extra el martes 10</div>
+      <ul class="clean">
+        <li>Proyecto desplegado en testnet y funcionando de punta a punta.</li>
+        <li>README final: problema, qué operaciones o contratos usa, Contract ID o cuentas, cómo correrlo y declaración de IA del proyecto completo.</li>
+        <li>Pitch de 3 minutos ensayado (ver la ruta de emprendimiento) e informe técnico en <code>docs/informe.md</code>.</li>
+      </ul>
+    </div>
+    <p class="note">Lo que no esté en testnet el martes 10 de noviembre se arregla en las office hours extra de ese día o no se presenta.</p>
+  </section>
+
+  <!-- DEMO DAY -->
+  <section id="s5">
+    <div class="ses-head"><div><div class="eyebrow">Sesión 5 · Viernes 13 de noviembre</div><h2>Demo Day y cierre de medición</h2></div><span class="when">Evento completo de 2:00 a 5:00 p. m.</span></div>
+    <p class="objetivo"><b>Objetivo:</b> que cada equipo demuestre un producto funcionando en testnet y lo explique, y cerrar la medición del aprendizaje.</p>
+    <div class="grid2">
+      <div class="box">
+        <h3>Formato por equipo: 8 minutos</h3>
+        <ul class="clean">
+          <li><b>3 min</b> de pitch.</li>
+          <li><b>3 min</b> de demo en vivo en testnet. No se aceptan videos: si falla, se depura en vivo y eso también cuenta.</li>
+          <li><b>2 min</b> de preguntas del panel. Cualquier integrante debe poder explicar cualquier parte.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Cierre de medición</h3>
+        <ul class="clean">
+          <li>Quiz de salida (las mismas 10 preguntas), individual y sin IA.</li>
+          <li>Encuesta de autoeficacia: «puedo crear una wallet y enviar un pago», «puedo explicar qué es una trustline», «puedo leer un contrato Soroban», «puedo desplegar un contrato en testnet», «puedo encontrar un error sin IA».</li>
+          <li>Verificación de registro en el Ambassador Program y cuenta de testnet activa.</li>
+          <li>Retro: qué sesión fue más útil y qué faltó.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="ia">
+    <div class="eyebrow">Política del semillero</div>
+    <h2>Uso de IA</h2>
+    <p>La IA (Cursor, Copilot, Claude, ChatGPT) está permitida y se enseña a usarla bien: pedir explicaciones antes que código, pedir pruebas antes que implementaciones y nunca aceptar un bloque que no se pueda explicar. <b>Lo único prohibido es ocultarla:</b> cada PR declara qué se generó con IA y qué se entendió y modificó. El reto sin IA y la prueba oral de la sesión 4 miden que la herramienta no haya reemplazado el aprendizaje.</p>
+    <p class="muted">La plantilla de PR con la declaración está en <a href="/entregables#plantilla-pr">Entregables</a>.</p>
+  </section>
+</main>
+
+<footer class="pie"><div class="wrap"><span>JaveBlockchain · Semillero de Blockchain, Facultad de Ingeniería, Pontificia Universidad Javeriana</span><span>Instagram @javeblockchain</span></div></footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recursos · Ruta JaveBlockchain</title>
+<meta name="description" content="Documentación, herramientas y guía de preinstalación de la Ruta JaveBlockchain 2026-II.">
+<link rel="icon" href="/assets/logo-jb.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/"><img src="/assets/logo-jb.svg" alt="JaveBlockchain" width="40" height="26"><span>Ruta JaveBlockchain</span></a>
+  <nav aria-label="Secciones"><a href="/">Inicio</a><a href="/tecnica">Ruta técnica</a><a href="/emprendimiento">Emprendimiento</a><a href="/entregables">Entregables</a><a href="/evaluacion">Evaluación</a><a href="/recursos">Recursos</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Estudio y herramientas</div>
+    <h1>Recursos</h1>
+    <p class="lead">Todo es gratuito y oficial salvo que se indique. Instala lo de la guía antes de la sesión 1 para no perder tiempo de taller.</p>
+    <div class="subnav"><a href="#preinstalacion">Preinstalación</a><a href="#base">Para todos</a><a href="#builders">Builders</a><a href="#fundamentos">Fundamentos</a><a href="#ecosistema">Ecosistema</a></div>
+  </div>
+
+  <section id="preinstalacion">
+    <div class="eyebrow">Antes del 16 de octubre</div>
+    <h2>Guía de preinstalación</h2>
+    <div class="grid2">
+      <div class="box"><h3>Todos</h3><ul class="clean"><li>Freighter, extensión del navegador: <a href="https://www.freighter.app">freighter.app</a></li><li>Cuenta de GitHub</li><li>Git</li><li>VS Code o Cursor</li><li>Node 20 o superior</li></ul></div>
+      <div class="box"><h3><span class="chip tec">Builders</span> además</h3><ul class="clean"><li>Rust con <code>rustup</code> (1.84 o superior)</li><li><code>rustup target add wasm32v1-none</code></li><li><code>stellar-cli</code>: <code>brew install stellar-cli</code> o el script oficial</li><li>En Windows: WSL2 con Ubuntu</li></ul><p class="muted">Verificación: <code>stellar --version</code> y <code>cargo --version</code>.</p></div>
+    </div>
+  </section>
+
+  <section id="base">
+    <div class="eyebrow">Para todos</div>
+    <h2>Documentación base</h2>
+    <ul class="clean">
+      <li><a href="https://developers.stellar.org/docs/learn/fundamentals">Stellar Docs → Learn → Fundamentals</a>: cuentas, activos, operaciones, transacciones, fees y consenso. Lectura obligatoria de las sesiones 1 y 2.</li>
+      <li><a href="https://lab.stellar.org">Stellar Lab</a>: construir, firmar y enviar transacciones a mano en testnet y leer el XDR.</li>
+      <li><a href="https://stellar.expert/explorer/testnet">stellar.expert (testnet)</a>: explorador para verificar hashes, balances y contratos.</li>
+      <li><a href="https://www.freighter.app">Freighter</a>: wallet del navegador.</li>
+      <li>Friendbot: desde Stellar Lab o en <code>https://friendbot.stellar.org?addr=G…</code> para fondear cuentas de testnet.</li>
+    </ul>
+  </section>
+
+  <section id="builders">
+    <div class="eyebrow"><span class="chip tec">Builders</span></div>
+    <h2>Contratos Soroban</h2>
+    <ul class="clean">
+      <li><a href="https://developers.stellar.org/docs/build/smart-contracts/getting-started">Getting Started</a>: setup, Hello World y despliegue en testnet. Es la ruta exacta de la sesión 2.</li>
+      <li><a href="https://github.com/stellar/soroban-examples">Soroban Examples</a>: contratos de referencia (token, auth, events, cross-contract, timelock).</li>
+      <li><a href="https://developers.stellar.org/docs/learn/fundamentals/contract-development">Storage y Authorization</a>: lo que se pregunta en la prueba oral.</li>
+      <li><a href="https://developers.stellar.org/docs/tools">Scaffold Stellar y bindings TypeScript</a>: frontend conectado al contrato (sesión 3).</li>
+      <li><a href="https://doc.rust-lang.org/book/">Rust Book</a>, capítulos 1 a 6 y 10: lo mínimo para leer un contrato. Quien no sabe Rust lo lee en la semana 1.</li>
+    </ul>
+  </section>
+
+  <section id="fundamentos">
+    <div class="eyebrow"><span class="chip fun">Fundamentos</span></div>
+    <h2>Producto y wallet</h2>
+    <ul class="clean">
+      <li><a href="https://github.com/stellar/js-stellar-sdk">Stellar SDK de JavaScript</a> y <a href="https://docs.freighter.app">Freighter API</a>: construir y firmar pagos desde una web app (sesión 3).</li>
+      <li><a href="https://developers.stellar.org/docs/learn/fundamentals/anchors">Anclas y SEPs</a>: cómo entra y sale dinero real. Lectura conceptual.</li>
+      <li><a href="https://quest.stellar.org">Stellar Quest</a>: retos para practicar entre sesiones.</li>
+      <li>Curso virtual de BAF sobre Stellar: material complementario.</li>
+    </ul>
+  </section>
+
+  <section id="ecosistema">
+    <div class="eyebrow">Después de la Ruta</div>
+    <h2>Ecosistema y programa</h2>
+    <ul class="clean">
+      <li><a href="https://communityfund.stellar.org/ambassadors">Stellar Ambassador Program</a>: registro obligatorio en la sesión 1.</li>
+      <li><a href="https://communityfund.stellar.org">Stellar Community Fund</a>: a dónde pueden ir los mejores proyectos después del Demo Day.</li>
+      <li>Discord de Stellar Developers (canal <code>#soroban</code>) y comunidad de Stellar Colombia.</li>
+      <li>Inscripción a la Ruta en <a href="https://luma.com/7saf4ugr">Luma</a>.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="pie"><div class="wrap"><span>JaveBlockchain · Semillero de Blockchain, Facultad de Ingeniería, Pontificia Universidad Javeriana</span><span>Instagram @javeblockchain</span></div></footer>
+<script src="/assets/app.js"></script>
+</body>
+</html>
