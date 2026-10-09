@@ -6,7 +6,9 @@ Lo organiza el Semillero de Blockchain de la Facultad de Ingeniería de la
 Pontificia Universidad Javeriana, con el apoyo de Stellar, BAF y el Centro
 Javeriano de Emprendimiento.
 
-Inscripción: https://luma.com/7saf4ugr · Instagram: @javeblockchain
+- Sitio: https://ruta-javeblockchain.jairoamayac.workers.dev
+- Inscripción: https://luma.com/7saf4ugr
+- Instagram: @javeblockchain
 
 ## Qué hay en el sitio
 
@@ -36,7 +38,7 @@ El sitio es un Cloudflare Worker que solo sirve archivos estáticos
 ```bash
 npm install
 npx wrangler dev      # vista local en http://localhost:8787
-npx wrangler deploy   # publica en ruta-javeblockchain.<subdominio>.workers.dev
+npx wrangler deploy   # publica en https://ruta-javeblockchain.jairoamayac.workers.dev
 ```
 
 Para cambiar una fecha, una actividad o una plantilla, edita el HTML de la
