@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sesión 1 · Ruta JaveBlockchain</title>
+<meta name="description" content="Cronograma minuto a minuto de la sesión 1 de la Ruta JaveBlockchain: viernes 16 de octubre, salón 9-06A, Edificio José Gabriel Maldonado.">
+<meta name="theme-color" content="#0F0F0F">
+<link rel="icon" href="/assets/logo-jb.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Sesión 1 · cronograma en vivo. Pensado para proyectar y para abrir en el celular. */
+:root {
+  --bg: #0F0F0F;
+  --panel: #17181C;
+  --fg: #F6F7F8;
+  --muted: #9EA3AE;
+  --line: #2A2C33;
+  --yellow: #FDDA24;
+  --lavender: #B7ACE8;
+  --teal: #00A7B5;
+  --display: "Lora", Georgia, serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); }
+body {
+  background:
+    radial-gradient(60% 40% at 0% 0%, rgba(0, 46, 93, .55), transparent 70%),
+    radial-gradient(45% 35% at 100% 30%, rgba(0, 167, 181, .12), transparent 70%),
+    radial-gradient(50% 40% at 50% 100%, rgba(183, 172, 232, .10), transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .14;
+  background-image: radial-gradient(rgba(246, 247, 248, .55) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.wrap { position: relative; max-width: 920px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; }
+
+header { display: grid; gap: 18px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.top a { display: flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 600; font-size: 14px; }
+.top img { height: 26px; }
+.top .back { color: var(--muted); font-weight: 500; }
+.top .back:hover { color: var(--fg); }
+.eyebrow { font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); font-weight: 600; }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(36px, 7vw, 68px); line-height: 1.02; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+h1 .hl { color: var(--yellow); position: relative; white-space: nowrap; }
+h1 .hl::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .1em; background: var(--yellow); border-radius: 4px; transform: rotate(-1deg); opacity: .9; }
+.datos { display: flex; flex-wrap: wrap; gap: 10px; }
+.dato { display: flex; flex-direction: column; gap: 2px; background: rgba(23, 24, 28, .8); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; min-width: 0; }
+.dato small { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.dato b { font-size: 15px; font-weight: 600; }
+
+/* Estado en vivo */
+.vivo { margin-top: 26px; border-radius: 16px; padding: 18px 20px; background: linear-gradient(135deg, rgba(253, 218, 36, .16), rgba(253, 218, 36, .04)); border: 1px solid rgba(253, 218, 36, .35); display: grid; gap: 12px; }
+.vivo .fila { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.vivo .estado { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--yellow); }
+.punto { width: 9px; height: 9px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 0 rgba(253, 218, 36, .6); }
+.vivo.activo .punto { animation: latido 1.6s infinite; }
+@keyframes latido { 0% { box-shadow: 0 0 0 0 rgba(253, 218, 36, .55); } 70% { box-shadow: 0 0 0 12px rgba(253, 218, 36, 0); } 100% { box-shadow: 0 0 0 0 rgba(253, 218, 36, 0); } }
+.vivo .titulo { font-family: var(--display); font-size: clamp(22px, 3.6vw, 30px); font-weight: 600; }
+.vivo .resta { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 14px; }
+.barra { height: 6px; background: rgba(246, 247, 248, .1); border-radius: 999px; overflow: hidden; }
+.barra i { display: block; height: 100%; width: 0; background: var(--yellow); border-radius: 999px; transition: width .6s ease; }
+
+/* Línea de tiempo */
+.linea { margin-top: 30px; position: relative; display: grid; gap: 12px; }
+.linea::before { content: ""; position: absolute; left: 88px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--line), var(--line)); }
+.bloque { position: relative; display: grid; grid-template-columns: 76px 1fr; gap: 26px; align-items: start; }
+.hora { text-align: right; padding-top: 16px; font-variant-numeric: tabular-nums; }
+.hora b { display: block; font-size: 18px; font-weight: 700; }
+.hora small { color: var(--muted); font-size: 12.5px; }
+.bloque::after { content: ""; position: absolute; left: 83px; top: 22px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--muted); }
+.card { background: rgba(23, 24, 28, .88); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; min-width: 0; transition: border-color .3s, transform .3s, opacity .3s; }
+.card h2 { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.2; margin: 0; text-wrap: balance; }
+.card ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: #C9CCD3; font-size: 15px; line-height: 1.45; }
+.tag { justify-self: start; font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: 3px 10px; }
+.tag.y { background: rgba(253, 218, 36, .14); color: var(--yellow); }
+.tag.l { background: rgba(183, 172, 232, .16); color: var(--lavender); }
+.tag.t { background: rgba(0, 167, 181, .16); color: #6FD7DF; }
+.tag.g { background: rgba(246, 247, 248, .08); color: var(--muted); }
+.quien { font-size: 13px; color: var(--muted); }
+
+.bloque.hecho .card { opacity: .5; }
+.bloque.hecho::after { background: var(--muted); }
+.bloque.ahora .card { border-color: var(--yellow); box-shadow: 0 0 0 1px var(--yellow), 0 18px 40px -20px rgba(253, 218, 36, .45); }
+.bloque.ahora::after { background: var(--yellow); border-color: var(--yellow); box-shadow: 0 0 0 5px rgba(253, 218, 36, .2); }
+.bloque.ahora .hora b { color: var(--yellow); }
+
+footer { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 20px; color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); padding-top: 18px; }
+footer a { color: var(--fg); text-decoration-color: var(--yellow); text-underline-offset: 3px; }
+.cta { display: inline-flex; background: var(--yellow); color: #0F0F0F; font-weight: 700; text-decoration: none; border-radius: 999px; padding: 9px 18px; font-size: 14px; }
+
+@media (max-width: 600px) {
+  .linea::before { left: 9px; }
+  .bloque { grid-template-columns: 1fr; gap: 6px; padding-left: 30px; }
+  .bloque::after { left: 4px; top: 6px; }
+  .hora { text-align: left; padding-top: 0; display: flex; gap: 8px; align-items: baseline; }
+}
+@media (prefers-reduced-motion: reduce) { .vivo.activo .punto { animation: none; } .barra i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="top">
+      <a href="/"><img src="/assets/logo-jb.svg" alt="" width="40" height="26">Ruta JaveBlockchain</a>
+      <a class="back" href="/#s1">Ver toda la Ruta →</a>
+    </div>
+    <div class="eyebrow">Sesión 1 · Cronograma</div>
+    <h1>Bienvenida, equipos y <span class="hl">el problema</span></h1>
+    <div class="datos">
+      <div class="dato"><small>Cuándo</small><b>Viernes 16 de octubre · 1:45 a 5:00 p. m.</b></div>
+      <div class="dato"><small>Dónde</small><b>Salón 9-06A · Edificio José Gabriel Maldonado, S.J.</b></div>
+      <div class="dato"><small>Trae</small><b>Tu computador y el correo con el que te inscribiste</b></div>
+    </div>
+  </header>
+
+  <section class="vivo" id="vivo" aria-live="polite">
+    <div class="fila">
+      <span class="estado"><span class="punto"></span><span id="estado">Viernes 16 de octubre</span></span>
+      <span class="resta" id="resta">Empieza a la 1:45 p. m.</span>
+    </div>
+    <div class="titulo" id="ahora">Te esperamos en el salón 9-06A</div>
+    <div class="barra"><i id="progreso"></i></div>
+  </section>
+
+  <section class="linea" id="linea">
+    <article class="bloque" data-inicio="13:45" data-min="15">
+      <div class="hora"><b>1:45</b><small>15 min</small></div>
+      <div class="card"><span class="tag g">Llegada</span><h2>Llegada y check-in</h2>
+        <ul><li>Check-in con el correo con el que te inscribiste en Luma</li><li>Escanea el QR del Linktree en la mesa de check-in</li></ul></div>
+    </article>
+    <article class="bloque" data-inicio="14:00" data-min="10">
+      <div class="hora"><b>2:00</b><small>10 min</small></div>
+      <div class="card"><span class="tag y">Todos</span><h2>Bienvenida y presentación</h2>
+        <ul><li>El equipo de líderes y el staff del semillero</li><li>Qué es la Ruta: las dos rutas, los cinco viernes y el Demo Day</li></ul></div>
+    </article>
+    <article class="bloque" data-inicio="14:10" data-min="30">
+      <div class="hora"><b>2:10</b><small>30 min</small></div>
+      <div class="card"><span class="tag y">Todos</span><h2>Dinámica y conformación de equipos</h2>
+        <ul><li>Juego integrador: cada persona se presenta</li><li>Mesas de debate: finanzas, problemas, negocios y tecnología</li><li>5 minutos para conformar tu equipo</li></ul></div>
+    </article>
+    <article class="bloque" data-inicio="14:40" data-min="20">
+      <div class="hora"><b>2:40</b><small>20 min</small></div>
+      <div class="card"><span class="tag t">Stellar y BAF</span><h2>Onboarding: Ambassador Program, BAF y Stellar</h2>
+        <ul><li>Presentación de Santiago y Aleja</li><li>Linktree: formulario de BAF, grupo de WhatsApp, redes y Notion</li></ul></div>
+    </article>
+    <article class="bloque" data-inicio="15:00" data-min="70">
+      <div class="hora"><b>3:00</b><small>70 min</small></div>
+      <div class="card"><span class="tag l">Emprendimiento</span><h2>Taller del Centro Javeriano de Emprendimiento: el problema</h2>
+        <ul><li>Identificar un problema real y a quién le duele, en equipo</li><li>Refrigerio para quienes se registraron</li></ul>
+        <span class="quien">Centro Javeriano de Emprendimiento</span></div>
+    </article>
+    <article class="bloque" data-inicio="16:10" data-min="10">
+      <div class="hora"><b>4:10</b><small>10 min</small></div>
+      <div class="card"><span class="tag t">Técnica</span><h2>Kahoot diagnóstico</h2>
+        <ul><li>Entra con tu nombre y apellido</li><li>Individual y sin IA: define tu nivel técnico</li></ul></div>
+    </article>
+    <article class="bloque" data-inicio="16:20" data-min="30">
+      <div class="hora"><b>4:20</b><small>30 min</small></div>
+      <div class="card"><span class="tag t">Técnica</span><h2>Bloque técnico: arranque y primera transacción</h2>
+        <ul><li>¿Qué es blockchain?</li><li>Registro en GitHub</li><li>Onboarding con la documentación de Stellar</li></ul></div>
+    </article>
+    <article class="bloque" data-inicio="16:50" data-min="10">
+      <div class="hora"><b>4:50</b><small>10 min</small></div>
+      <div class="card"><span class="tag y">Todos</span><h2>Tarea de la semana</h2>
+        <ul><li>Explicación de la tarea del PR #1, que vence el lunes 19 de octubre a las 11:59 p. m.</li></ul></div>
+    </article>
+  </section>
+
+  <footer>
+    <span>JaveBlockchain · Semillero de Blockchain, Facultad de Ingeniería · Instagram @javeblockchain</span>
+    <a class="cta" href="https://luma.com/7saf4ugr">¿Aún no te inscribes? Luma</a>
+  </footer>
+</div>
+
+<script>
+// Marca el bloque en curso según la hora de Bogotá del viernes 16 de octubre de 2026.
+(function () {
+  var DIA = "2026-10-16";
+  var bloques = Array.prototype.slice.call(document.querySelectorAll(".bloque"));
+  var $ = function (id) { return document.getElementById(id); };
+  var aMin = function (hhmm) { var p = hhmm.split(":"); return +p[0] * 60 + +p[1]; };
+  var fmt = function (m) { var h = Math.floor(m / 60), r = m % 60; var h12 = h > 12 ? h - 12 : h; return h12 + ":" + (r < 10 ? "0" : "") + r + (h >= 12 ? " p. m." : " a. m."); };
+  var inicio = aMin("13:45"), fin = aMin("17:00");
+
+  function bogota() {
+    var partes = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Bogota", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+    var o = {}; partes.forEach(function (p) { o[p.type] = p.value; });
+    return { dia: o.year + "-" + o.month + "-" + o.day, min: (+o.hour % 24) * 60 + +o.minute };
+  }
+
+  function actualizar() {
+    var ahora = bogota();
+    var vivo = $("vivo");
+    bloques.forEach(function (b) { b.classList.remove("hecho", "ahora"); });
+    vivo.classList.remove("activo");
+
+    if (ahora.dia < DIA || (ahora.dia === DIA && ahora.min < inicio)) {
+      $("estado").textContent = ahora.dia === DIA ? "Hoy" : "Viernes 16 de octubre";
+      $("ahora").textContent = "Te esperamos en el salón 9-06A";
+      $("resta").textContent = ahora.dia === DIA ? "Empieza en " + (inicio - ahora.min) + " min" : "Empieza a la 1:45 p. m.";
+      $("progreso").style.width = "0%";
+      return;
+    }
+    if (ahora.dia > DIA || ahora.min >= fin) {
+      bloques.forEach(function (b) { b.classList.add("hecho"); });
+      $("estado").textContent = "Sesión terminada";
+      $("ahora").textContent = "Gracias por venir. Nos vemos el viernes 23 de octubre";
+      $("resta").textContent = "PR #1: lunes 19 de octubre, 11:59 p. m.";
+      $("progreso").style.width = "100%";
+      return;
+    }
+    vivo.classList.add("activo");
+    $("estado").textContent = "En vivo";
+    bloques.forEach(function (b, i) {
+      var ini = aMin(b.dataset.inicio), dur = +b.dataset.min;
+      if (ahora.min >= ini + dur) b.classList.add("hecho");
+      else if (ahora.min >= ini) {
+        b.classList.add("ahora");
+        $("ahora").textContent = b.querySelector("h2").textContent;
+        var queda = ini + dur - ahora.min;
+        var sig = bloques[i + 1];
+        $("resta").textContent = "Quedan " + queda + " min" + (sig ? " · sigue: " + sig.querySelector("h2").textContent + " a las " + fmt(aMin(sig.dataset.inicio)) : "");
+      }
+    });
+    $("progreso").style.width = Math.round((ahora.min - inicio) / (fin - inicio) * 100) + "%";
+  }
+
+  actualizar();
+  setInterval(actualizar, 30000);
+})();
+</script>
+</body>
+</html>
