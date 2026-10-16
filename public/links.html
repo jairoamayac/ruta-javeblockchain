@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JaveBlockchain · Links</title>
+<meta name="description" content="Todos los enlaces de JaveBlockchain, el Semillero de Blockchain de la Pontificia Universidad Javeriana: Ruta JaveBlockchain, WhatsApp, Instagram, LinkedIn y GitHub.">
+<meta name="theme-color" content="#0F0F0F">
+<meta property="og:title" content="JaveBlockchain · Links">
+<meta property="og:description" content="Ruta JaveBlockchain, comunidad en WhatsApp, Instagram, LinkedIn y GitHub.">
+<link rel="icon" href="/assets/logo-jb.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Linktree de JaveBlockchain: una columna, tarjeta destacada para la Ruta y botones con ícono. */
+:root {
+  --bg: #0B0B0E;
+  --card: rgba(24, 25, 31, .78);
+  --card-hover: rgba(34, 36, 44, .92);
+  --fg: #F6F7F8;
+  --muted: #9EA3AE;
+  --line: rgba(246, 247, 248, .1);
+  --yellow: #FDDA24;
+  --blue: #1E29C2;
+  --lavender: #B7ACE8;
+  --display: "Lora", Georgia, serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--fg); font-family: var(--body); }
+body { overflow-x: hidden; }
+
+/* Fondo: dos auras del degradado del logo y una retícula de puntos */
+.fondo { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.aura { position: absolute; width: 70vmax; height: 70vmax; border-radius: 50%; filter: blur(80px); opacity: .42; }
+.aura.a { background: radial-gradient(circle, var(--yellow), transparent 62%); top: -38vmax; right: -30vmax; animation: flota 18s ease-in-out infinite alternate; }
+.aura.b { background: radial-gradient(circle, var(--blue), transparent 62%); bottom: -40vmax; left: -32vmax; animation: flota 22s ease-in-out infinite alternate-reverse; }
+@keyframes flota { from { transform: translate(0, 0) scale(1); } to { transform: translate(-6vmax, 5vmax) scale(1.08); } }
+.fondo::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(246, 247, 248, .22) 1px, transparent 1px); background-size: 20px 20px; mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%); }
+
+main { position: relative; z-index: 1; max-width: 460px; margin: 0 auto; padding-inline: 18px; padding-block: 44px 40px; display: grid; gap: 14px; }
+
+/* Perfil */
+.perfil { display: grid; justify-items: center; gap: 10px; text-align: center; margin-bottom: 10px; }
+.logo { width: 112px; height: 112px; border-radius: 28px; display: grid; place-items: center; background: linear-gradient(145deg, #15161B, #0B0B0E); border: 1px solid var(--line); box-shadow: 0 0 0 6px rgba(253, 218, 36, .05), 0 20px 50px -18px rgba(253, 218, 36, .35), 0 20px 50px -24px rgba(30, 41, 194, .6); }
+.logo img { width: 78px; height: auto; }
+h1 { font-family: var(--display); font-weight: 600; font-size: 30px; margin: 6px 0 0; letter-spacing: -.01em; }
+.bio { color: var(--muted); font-size: 14.5px; line-height: 1.45; max-width: 34ch; margin: 0; }
+.verif { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--yellow); background: rgba(253, 218, 36, .1); border: 1px solid rgba(253, 218, 36, .25); border-radius: 999px; padding: 4px 10px; }
+
+/* Tarjeta destacada: la Ruta */
+.destacada { position: relative; display: grid; gap: 12px; padding: 20px; border-radius: 20px; text-decoration: none; color: #0F0F0F; background: linear-gradient(135deg, #FDDA24 0%, #F6C915 55%, #EBD350 100%); overflow: hidden; box-shadow: 0 22px 44px -22px rgba(253, 218, 36, .7); transition: transform .2s ease, box-shadow .2s ease; }
+.destacada::after { content: ""; position: absolute; right: -30px; top: -30px; width: 150px; height: 150px; border-radius: 50%; background: rgba(255, 255, 255, .22); }
+.destacada:hover { transform: translateY(-3px); box-shadow: 0 28px 50px -22px rgba(253, 218, 36, .85); }
+.destacada .chip { justify-self: start; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: #0F0F0F; color: var(--yellow); border-radius: 999px; padding: 4px 10px; }
+.destacada h2 { font-family: var(--display); font-size: 25px; line-height: 1.12; margin: 0; font-weight: 600; position: relative; z-index: 1; }
+.destacada p { margin: 0; font-size: 14.5px; font-weight: 500; position: relative; z-index: 1; }
+.destacada .ir { display: inline-flex; align-items: center; gap: 8px; justify-self: start; background: #0F0F0F; color: var(--fg); font-weight: 700; font-size: 15px; border-radius: 999px; padding: 10px 18px; position: relative; z-index: 1; }
+
+/* Botones */
+.grupo { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 12px 4px 2px; }
+.link { display: grid; grid-template-columns: 46px 1fr 20px; align-items: center; gap: 14px; padding: 12px 16px 12px 12px; border-radius: 16px; text-decoration: none; color: var(--fg); background: var(--card); border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: transform .18s ease, background .18s ease, border-color .18s ease; }
+.link:hover { transform: translateY(-2px); background: var(--card-hover); border-color: rgba(246, 247, 248, .22); }
+.link:active { transform: scale(.985); }
+.ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; color: #fff; }
+.ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.txt { display: grid; gap: 2px; min-width: 0; }
+.txt b { font-size: 15.5px; font-weight: 600; }
+.txt small { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.flecha { width: 18px; height: 18px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .18s ease, stroke .18s ease; }
+.link:hover .flecha { transform: translateX(3px); stroke: var(--fg); }
+
+.ico.wa { background: linear-gradient(145deg, #25D366, #128C7E); }
+.ico.ig { background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FD5949 45%, #D6249F 60%, #285AEB 90%); }
+.ico.li { background: #0A66C2; }
+.ico.gh { background: #24292F; border: 1px solid rgba(255, 255, 255, .12); }
+.ico.cr { background: linear-gradient(145deg, #2A2C33, #17181C); color: var(--yellow); border: 1px solid rgba(253, 218, 36, .3); }
+.ico.ru { background: linear-gradient(145deg, #1E29C2, #3A44D6); }
+
+/* Pie */
+footer { margin-top: 18px; display: grid; gap: 6px; justify-items: center; text-align: center; color: var(--muted); font-size: 12.5px; }
+footer .apoyan { letter-spacing: .1em; text-transform: uppercase; font-size: 11px; font-weight: 600; }
+footer b { color: var(--fg); font-weight: 600; }
+
+/* Entrada escalonada */
+.entra { animation: entra .5s ease both; }
+@keyframes entra { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .aura, .entra { animation: none; } .link, .destacada { transition: none; } }
+</style>
+</head>
+<body>
+<div class="fondo" aria-hidden="true"><div class="aura a"></div><div class="aura b"></div></div>
+
+<main>
+  <section class="perfil entra">
+    <div class="logo"><img src="/assets/logo-jb.svg" alt="Logo de JaveBlockchain" width="78" height="50"></div>
+    <h1>JaveBlockchain</h1>
+    <p class="bio">Semillero de Blockchain · Facultad de Ingeniería · Pontificia Universidad Javeriana</p>
+    <span class="verif">Stellar Ambassadors · Colombia Chapter</span>
+  </section>
+
+  <a class="destacada entra" style="animation-delay:.06s" href="https://luma.com/7saf4ugr">
+    <span class="chip">Inscripciones abiertas</span>
+    <h2>Ruta JaveBlockchain: del problema real al prototipo en Stellar</h2>
+    <p>5 viernes · 16 oct al 13 nov · 2:00 a 5:00 p. m. · <span style="white-space:nowrap">Salón 9-06A</span>, Edificio José Gabriel Maldonado</p>
+    <span class="ir">Inscríbete en Luma
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+
+  <div class="grupo entra" style="animation-delay:.1s">La Ruta</div>
+  <a class="link entra" style="animation-delay:.12s" href="/sesion-1">
+    <span class="ico cr"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+    <span class="txt"><b>Cronograma de la sesión 1</b><small>Viernes 16 de octubre, en vivo</small></span>
+    <svg class="flecha" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+  <a class="link entra" style="animation-delay:.15s" href="https://chat.whatsapp.com/KHsvH0H1B8sGadMBuaQk0g">
+    <span class="ico wa"><svg viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9.2 8.6c.2-.4.5-.4.8-.4h.4c.2 0 .4 0 .5.4l.6 1.4c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.1.4-.2.6-.1l1.4.6c.4.1.4.3.4.5v.4c0 .3 0 .6-.4.8-.5.3-1.3.5-2.2.2a8 8 0 0 1-4.7-4.7c-.3-.9-.1-1.7.2-2.2z"/></svg></span>
+    <span class="txt"><b>Grupo de WhatsApp</b><small>Comunidad de la Ruta JaveBlockchain</small></span>
+    <svg class="flecha" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+  <a class="link entra" style="animation-delay:.18s" href="/">
+    <span class="ico ru"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+    <span class="txt"><b>Sitio de la Ruta</b><small>Agenda, entregables, evaluación y recursos</small></span>
+    <svg class="flecha" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+
+  <div class="grupo entra" style="animation-delay:.21s">Síguenos</div>
+  <a class="link entra" style="animation-delay:.23s" href="https://www.instagram.com/javeblockchain">
+    <span class="ico ig"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span>
+    <span class="txt"><b>Instagram</b><small>@javeblockchain</small></span>
+    <svg class="flecha" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+  <a class="link entra" style="animation-delay:.26s" href="https://www.linkedin.com/company/javeblockchain">
+    <span class="ico li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+    <span class="txt"><b>LinkedIn</b><small>JaveBlockchain</small></span>
+    <svg class="flecha" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+  <a class="link entra" style="animation-delay:.29s" href="https://github.com/Javeriana-Blockchain">
+    <span class="ico gh"><svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span>
+    <span class="txt"><b>GitHub</b><small>Javeriana-Blockchain</small></span>
+    <svg class="flecha" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+
+  <footer class="entra" style="animation-delay:.33s">
+    <span class="apoyan">Apoyan</span>
+    <span><b>Stellar</b> · <b>BAF</b> · <b>Centro Javeriano de Emprendimiento</b></span>
+    <span>Facultad de Ingeniería · Pontificia Universidad Javeriana, Bogotá</span>
+  </footer>
+</main>
+</body>
+</html>
